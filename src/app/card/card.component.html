@@ -1,0 +1,61 @@
+<div class="card" *ngFor="let element of elements">
+  <div *ngIf="element.like != 0 || element.repost != 0; else account">
+    <div class="card__box">
+      <div class="card__wrap">
+        <div class="card__wrap__img">
+          <img src="../../assets/avatar.png" alt="">
+        </div>
+        <div class="card__user">
+          <p class="card__user__title">Андрей Иванович</p>
+          <p class="card__user__target">Пост Инстаграм</p>
+        </div>
+      </div>
+    </div>
+    <div class="card__box">
+      <div class="card__wrap">
+        <div class="card__wrap__img">
+          <img src="../../assets/like.png" alt="">
+        </div>
+        <div class="card__user">
+          <p class="card__user__task">Лайки</p>
+          <p class="card__user__count">0 / {{ element.like }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card__box">
+      <div class="card__wrap">
+        <div class="card__wrap__img">
+          <img src="../../assets/repost.png" alt="">
+        </div>
+        <div class="card__user">
+          <p class="card__user__task">Репосты</p>
+          <p class="card__user__count">0 / {{ element.repost }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #account>
+    <div class="card__box">
+      <div class="card__wrap">
+        <div class="card__wrap__img">
+          <img src="../../assets/avatar.png" alt="">
+        </div>
+        <div class="card__user">
+          <p class="card__user__title">Андрей Иванович</p>
+          <p class="card__user__target">Аккаунт Инстаграм</p>
+        </div>
+      </div>
+    </div>
+    <div class="card__box" >
+      <div class="card__wrap">
+        <div class="card__wrap__img">
+          <img src="../../assets/user.png" alt="">
+        </div>
+        <div class="card__user">
+          <p class="card__user__task">Подписчики</p>
+          <p class="card__user__count">0 / {{ element.subscribe }}</p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

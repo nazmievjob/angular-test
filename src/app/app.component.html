@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <button (click)="showModal()">ДОБАВИТЬ ЗАКАЗ</button>
+  </div>
+  <div *ngIf="show; else noCards">
+    <app-modal (onRemove)="removeModal()" (onAdd)="onAddTask($event)"></app-modal>
+  </div>
+  <ng-template #noCards>
+    <app-card [elements]="ListElements"></app-card>
+  </ng-template>
+</div>

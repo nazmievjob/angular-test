@@ -1,0 +1,221 @@
+form {
+  display: flex;
+  justify-content: flex-end;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+.form {
+  background: #F7F7F7;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  width: 100%;
+  max-width: 620px;
+
+
+  &__header {
+    padding: 20px;
+    p {
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 36px;
+      text-align: center;
+      color: #464646;
+      margin: 0;
+      @media (max-width: 768px) {
+        font-size: 22px;
+        line-height: 30px
+      }
+    }
+  }
+
+  &__body {
+    background: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #ECECEC;
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+    p {
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #464646;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    input {
+      border: 2px solid #ECECEC;
+      border-radius: 4px;
+      padding: 10px;
+      width: 95%;
+      outline: none;
+      @media (max-width: 768px) {
+        width: 90%;
+      }
+    }
+    .border-error {
+      border: 2px solid #FF6A6A;
+    }
+  }
+
+  &__error {
+    margin-top: 10px;
+    span {
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #FF6A6A;
+    }
+  }
+
+  &__content {
+    background: #fff;
+    &__box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      border-bottom: 1px solid #ECECEC;
+      padding: 20px;
+      @media (max-width: 768px) {
+        padding: 10px;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+    &__left {
+      display: flex;
+      align-items: center;
+      @media (max-width: 768px) {
+        margin-bottom: 10px;
+      }
+      img {
+        margin-right: 20px;
+      }
+    }
+    &__right {
+      width: 70%;
+      max-width: 390px;
+      position: relative;
+      @media (max-width: 768px) {
+        width:100%;
+      }
+      span {
+        position: absolute;
+        right: 10px;
+        top: 17px;
+
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: right;
+        color: #999999;
+      }
+
+      input {
+        border: 2px solid #DCDCDC;
+        box-sizing: border-box;
+        border-radius: 6px;
+        width: 100%;
+        padding: 17px 20px 14px;
+        outline: none;
+      }
+
+      .input-number {
+        -moz-appearance: textfield;
+      }
+      .input-number::-webkit-inner-spin-button {
+        display: none;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 20px;
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+
+    p {
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 28px;
+      text-align: right;
+      color: #999999;
+      margin-bottom: 20px;
+      b {
+        color: #464646;
+      }
+    }
+    &__buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+
+      .btn {
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 11px;
+        border-radius: 16px;
+        border: none;
+        width: 100%;
+        transition: .3s;
+      }
+      .btn-grey {
+        background: var(--btn-grey);
+        &:hover {
+          background: #9C9C9C;
+        }
+        &:focus {
+          background: #6F6F6F;
+        }
+      }
+
+      .btn-red {
+        background: var(--btn-red);
+        &:hover {
+          background: #FF4343;
+        }
+        &:focus {
+          background: #C53333;
+        }
+      }
+
+      .btn-red:focus {
+        background: green;
+      }
+      button {
+        margin-right: 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      button[disabled] {
+        mix-blend-mode: normal;
+        opacity: 0.4;
+      }
+    }
+  }
+}

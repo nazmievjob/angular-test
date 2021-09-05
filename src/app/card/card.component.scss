@@ -1,0 +1,62 @@
+.card {
+	background: #fff;
+	border-radius: 6px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+  &__box {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+	&__wrap {
+		display: flex;
+	    align-items: center;
+	    justify-content: flex-start;
+
+	    &__img {
+	    	margin-right: 20px;
+	    }
+	}
+	&__user {
+		&__title {
+			font-family: Rubik;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 20px;
+			line-height: 24px;
+			color: #464646;
+			margin-top: 0;
+			margin-bottom: 4px;
+		}
+		&__target {
+			font-family: Rubik;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 22px;
+			color: #439DD5;
+			margin: 0;
+		}
+    &__task {
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: #999999;
+      margin-bottom: 7px;
+    }
+    &__count {
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: #464646;
+      margin: 0;
+    }
+	}
+}

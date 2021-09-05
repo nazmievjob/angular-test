@@ -1,0 +1,61 @@
+<form (ngSubmit)="submit()" [formGroup]="form">
+  <div class="form">
+    <div class="form__header">
+      <p>Оформление заказа</p>
+    </div>
+    <div class="form__body">
+      <p>Укажите ссылку на то, что хотите раскрутить</p>
+      <input [value]="name"
+             placeholder="Введите ссылку"
+             formControlName="s_url"
+             [ngClass]="s_url.value && s_url.invalid ? 'border-error' : '' "
+             (input)="name=getValue($event)">
+      <div class="form__error" *ngIf="s_url.value && s_url.invalid">
+        <span>Некорректная ссылка</span>
+      </div>
+    </div>
+    <div  *ngIf="s_url.value && !s_url.invalid" class="form__content">
+      <div *ngIf="post == -1; else subscribers">
+        <div class="form__content__box">
+          <div class="form__content__left">
+            <img src="../../assets/like.png" alt="">
+            <p>Лайки</p>
+          </div>
+          <div class="form__content__right">
+            <input class="input-number" type="number" formControlName="like" [value]="f_like" (input)="f_like=getCountLike($event)">
+            <span>{{ like_price }} ₽</span>
+          </div>
+        </div>
+        <div class="form__content__box">
+          <div class="form__content__left">
+            <img src="../../assets/repost.png" alt="">
+            <p>Репосты</p>
+          </div>
+          <div class="form__content__right">
+            <input class="input-number" type="number" formControlName="repost" [value]="f_repost" (input)="f_repost=getCountRepost($event)">
+            <span>{{ st_price }} ₽</span>
+          </div>
+        </div>
+      </div>
+      <ng-template #subscribers>
+        <div class="form__content__box">
+          <div class="form__content__left">
+            <img src="../../assets/user.png" alt="">
+            <p>Подписчики</p>
+          </div>
+          <div class="form__content__right">
+            <input class="input-number" type="number" formControlName="subscribe" [value]="f_subscribe" (input)="f_subscribe=getCountSubscribe($event)">
+            <span>{{ sub_price }}</span>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+    <div class="form__footer">
+      <p>Итого: <b>{{ st_sum }} руб.</b></p>
+      <div class="form__footer__buttons">
+        <button class="btn btn-grey" (click)="onRemoveClick()">ЗАКРЫТЬ</button>
+        <button class="btn btn-red" type="submit" [disabled]="s_url.invalid">ДОБАВИТЬ</button>
+      </div>
+    </div>
+  </div>
+</form>
